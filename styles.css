@@ -1,0 +1,225 @@
+body {
+    font-family: 'Montserrat', sans-serif; /* Apply Raleway font */
+    font-size: 19px;
+    margin: 0;
+    padding: 0;
+    background-color: #011;
+    color: #fff;
+    min-height: 200vh;
+    display: grid;
+    place-content: end center;
+
+}
+
+@media screen and (min-width:700px){
+    div.post{
+      grid-template-columns: 0.8fr 1.1fr;
+  
+    }
+  }
+
+header {
+    background-image: url('Pranav.jpg'); /* Replace 'background-image.jpg' with your image file */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: table;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    font-size: 44px;
+    padding: 150px 0; /* Adjust the padding to control the content's position */
+}
+
+header h1, header p {
+    margin: 0;
+}
+
+section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+section.active {
+    opacity: 0.51;
+    transform: translateY(0);
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+h5{
+    font-family: 'poppins-bold', sans-serif;
+    color: #cc005f;;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 2px solid #3498db;
+    transition: border-bottom 0.3s;
+}
+
+a:hover {
+    border-bottom: 2px solid #2980b9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #111;
+    color: #fff;
+}
+.moving-images {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 700px; /* Adjust height as needed */
+    background: hsla(185, 100%, 37%, 0.5);
+
+}
+
+.moving-image {
+    max-width: 70%;
+    height: auto;
+    position: absolute;
+    animation: moveLeftToRight 15s linear infinite; /* Adjust duration as needed */
+}
+
+.container1 {
+display: flex;
+width: 100%;
+padding: 4% 2%;
+box-sizing: border-box;
+height: 75vh;
+}
+
+.containerA{
+    display: flex;
+    width: 100%;
+    height:auto;
+    padding: 4% 2%;
+    box-sizing: border-box;
+    gap: 70px;
+}
+
+.box {
+flex: 1;
+overflow: hidden;
+transition: .5s;
+margin: 0 2%;
+box-shadow: 0 20px 30px rgba(0,0,0,.1);
+line-height: 0;
+}
+
+.box > img {
+width: 200%;
+height: calc(100% - 10vh);
+object-fit: cover; 
+transition: .5s;
+}
+
+.box > span {
+font-size: 3.8vh;
+display: block;
+text-align: center;
+height: 10vh;
+line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+width: 100%;
+height: 100%;
+}
+
+.gallery {
+    --s: 300px; /* control the size */
+    --g: 10px;  /* control the gap */
+    --f: 0.5;   /* control the scale factor */
+    display: grid;
+    gap: var(--g);
+    width: calc(3*var(--s) + 2*var(--g));
+    aspect-ratio: 1;
+    grid-template-columns: repeat(3,auto);
+    height: 100vh;
+    padding-left: 40vh ;
+  }
+  
+  .gallery > img {
+    width: 0;
+    height: 0;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .35s linear;
+  }
+  
+  .gallery img:hover{
+    filter: grayscale(0);
+    width:  calc(var(--s)*var(--f));
+    height: calc(var(--s)*var(--f));
+  }
+
+
+@keyframes moveLeftToRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.typing-effect {
+    white-space: pre-line; /* Preserve newlines */
+    overflow: hidden;
+    max-height: 0;
+    animation: expandTyping 7s steps(40, end) forwards, fadeIn 1s ease-in-out 8s forwards; /* Adjust duration as needed */
+}
+
+@keyframes expandTyping {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: 500px; /* Adjust the max-height as needed */
+    }
+}
+
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
